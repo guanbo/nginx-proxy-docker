@@ -34,3 +34,10 @@ docker run \
   --network nginx-proxy \
   $IMAGE:$TAG
 ```
+
+## Debug
+
+```zsh
+$ docker logs nginx
+$ docker exec -it nginx-gen cat /etc/nginx/conf.d/default.conf
+```
