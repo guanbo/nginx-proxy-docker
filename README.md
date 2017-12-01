@@ -7,7 +7,7 @@
 ### Install
 
 ```zsh
-$ sudo curl -L https://github.com/docker/compose/releases/download/1.9.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+$ sudo curl -L https://github.com/docker/compose/releases/download/1.17.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 $ sudo chmod +x /usr/local/bin/docker-compose
 ```
 
@@ -22,6 +22,8 @@ $ docker network create -d bridge nginx-proxy
 ### Startup
 
 ```zsh
+$ git clone https://github.com/guanbo/nginx-proxy-docker.git
+$ cd nginx-proxy-docker
 $ docker-compose up -d
 ```
 
