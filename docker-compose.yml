@@ -4,6 +4,7 @@ services:
   nginx:
     image: nginx
     container_name: nginx
+    restart: always
     ports:
       - "80:80"
       - "443:443"
@@ -18,6 +19,7 @@ services:
   nginx-gen:
     image: jwilder/docker-gen
     container_name: nginx-gen
+    restart: always
     volumes:
       - "/var/run/docker.sock:/tmp/docker.sock:ro"
       - "./nginx-compose-v2.tmpl:/etc/docker-gen/templates/nginx.tmpl:ro"
@@ -27,6 +29,7 @@ services:
   letsencrypt-nginx-proxy-companion:
     image: jrcs/letsencrypt-nginx-proxy-companion
     container_name: letsencrypt-nginx-proxy-companion
+    restart: always
     volumes_from:
       - nginx
     volumes:
